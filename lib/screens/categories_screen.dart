@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../data/dummy_data.dart';
+import '../models/meal.dart';
 import '../widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  const CategoriesScreen({super.key, required this.onToggleFavorite});
+  final void Function(Meal meal) onToggleFavorite;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('Meal App')),
-      ),
-      body: GridView(
+    return  GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 20,
@@ -21,9 +19,9 @@ class CategoriesScreen extends StatelessWidget {
         ),
         children: [
           for (final category in availableCategories)
-            CategoryGridItem(category: category)
+            CategoryGridItem(category: category, onToggleFavorite: onToggleFavorite,)
         ],
-      ),
+
     );
   }
 }

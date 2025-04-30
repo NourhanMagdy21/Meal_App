@@ -4,34 +4,40 @@ import 'package:food_app/widgets/meal_item.dart';
 import '../models/meal.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen({super.key, required this.title, required this.meals});
+  const MealsScreen({super.key,  this.title, required this.meals, required this.onToggleFavorite});
 
-  final String title;
+  final String? title;
   final List<Meal> meals;
+  final void Function(Meal meal) onToggleFavorite;
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return title==null? content(context) : Scaffold(
         appBar: AppBar(
-          title: Center(child: Text(title)),
+          title: Center(child: Text(title!)),
 
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: meals
-                .map((meal) => MealItem(
-                      meal: meal,
-                      onSelectMeal: (Meal meal) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (ctx) => MealDetailsScreen(meal: meal, onToggleFavorite: (Meal meal) {}, ),
-                          ),
-                        );
-                      },
-                    ))
-                .toList(),
-          ),
-        ));
+        body: content(context));
+  }
+
+  SingleChildScrollView content(BuildContext context) {
+    return SingleChildScrollView(
+        child: Column(
+          children: meals
+              .map((meal) => MealItem(
+                    meal: meal,
+                    onSelectMeal: (Meal meal) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (ctx) => MealDetailsScreen(meal: meal, onToggleFavorite: onToggleFavorite, ),
+                        ),
+                      );
+                    },
+                  ))
+              .toList(),
+        ),
+      );
   }
 }
