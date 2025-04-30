@@ -92,7 +92,7 @@ class _TabsScreenState extends State<TabsScreen> {
       availableMeals: availableMeals,
       onToggleFavorite: _toggleMealFavoriteStatus,
     );
-    var activePageTitle = 'Pick your category';
+    var activePageTitle = 'Pick Your Meal';
     if (_selectPageIndex == 1) {
       activePage = MealsScreen(
         meals: _favoriteMeal,
