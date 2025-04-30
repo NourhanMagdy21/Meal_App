@@ -11,51 +11,61 @@ const List<Category> availableCategories = [
     id: 'c1',
     title: 'Italian',
     color: Colors.purple,
+    imagePath: 'assets/images/east.jpg'
   ),
   Category(
     id: 'c2',
     title: 'Quick & Easy',
     color: Colors.red,
+      imagePath: 'assets/images/easyy.jpg'
   ),
   Category(
     id: 'c3',
     title: 'Hamburgers',
     color: Colors.orange,
+      imagePath: 'assets/images/hamburger.jpg'
   ),
   Category(
     id: 'c4',
     title: 'German',
     color: Colors.amber,
+      imagePath: 'assets/images/german.jpg'
   ),
   Category(
     id: 'c5',
     title: 'Light & Lovely',
     color: Colors.blue,
+      imagePath: 'assets/images/light.jpg'
   ),
   Category(
     id: 'c6',
     title: 'Exotic',
     color: Colors.green,
+      imagePath: 'assets/images/exotic.jpg'
   ),
   Category(
     id: 'c7',
     title: 'Breakfast',
     color: Colors.lightBlue,
+      imagePath: 'assets/images/breakfast.jpg'
   ),
   Category(
     id: 'c8',
     title: 'Asian',
     color: Colors.lightGreen,
+      imagePath: 'assets/images/asin.jpg'
   ),
   Category(
     id: 'c9',
     title: 'French',
     color: Colors.pink,
+      imagePath: 'assets/images/french.jpg'
   ),
   Category(
     id: 'c10',
     title: 'Summer',
     color: Colors.teal,
+      imagePath: 'assets/images/summer.jpg'
   ),
 ];
 
@@ -192,8 +202,8 @@ const List<Meal> dummyMeals = [
   Meal(
     id: 'm5',
     categories: [
-      'c2'
-          'c5',
+      'c2',
+      'c5',
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
