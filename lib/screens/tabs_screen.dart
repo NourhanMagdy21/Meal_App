@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:food_app/data/dummy_data.dart';
 import 'package:food_app/screens/categories_screen.dart';

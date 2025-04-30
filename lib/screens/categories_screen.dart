@@ -11,20 +11,23 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          childAspectRatio: 3 / 2,
-        ),
-        children: [
-          for (final category in availableCategories)
-            CategoryGridItem(
-              availableMeals :availableMeals,
-              category: category, onToggleFavorite: onToggleFavorite,)
-        ],
+    return  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+            childAspectRatio: 3 / 2,
+          ),
+          children: [
+            for (final category in availableCategories)
+              CategoryGridItem(
+                availableMeals :availableMeals,
+                category: category, onToggleFavorite: onToggleFavorite,)
+          ],
 
+      ),
     );
   }
 }

@@ -38,6 +38,7 @@ class CategoryGridItem extends StatelessWidget {
           padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
 image: DecorationImage(
+  fit: BoxFit.cover,
     image: AssetImage(category.imagePath,)),
               borderRadius: BorderRadius.circular(16),),
               // gradient: LinearGradient(colors: [
